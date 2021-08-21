@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
-      test
+      test2
     </>
   )
 }
