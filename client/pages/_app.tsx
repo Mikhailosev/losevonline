@@ -1,18 +1,22 @@
 import '../styles/globals.scss'
+import '../styles/animations.scss'
+
 import type { AppProps } from 'next/app'
 import React, { ReactElement } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import { SWRConfig } from 'swr'
-const colors = {
-  brand: {
-    900: '#fec303',
-    800: '#153e75',
-    700: '#2a69ac',
-  },
-}
+import colors from './theme'
+import { createBreakpoints } from '@chakra-ui/theme-tools'
+
 const theme = extendTheme({ colors })
 
+const breakpoints = createBreakpoints({
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px',
+})
 function MyApp({ Component, pageProps }: AppProps): ReactElement | null {
   return (
     <SWRConfig
@@ -23,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement | null {
           fetch(resource, init).then((res) => res.json()),
       }}
     >
-      <ChakraProvider theme={theme}>
+      <ChakraProvider theme={extendTheme({ ...theme, breakpoints })}>
         <Component {...pageProps} />
       </ChakraProvider>
     </SWRConfig>

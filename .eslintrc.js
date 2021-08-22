@@ -13,6 +13,7 @@ module.exports = {
     // You can remove the prefer-const rule, as it is already added by @typescript-eslint/recommended
 
     // I suggest you add at least those two rules:
+    'react/display-name': 'off',
     'no-empty-pattern': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
