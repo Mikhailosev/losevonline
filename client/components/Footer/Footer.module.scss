@@ -1,0 +1,15 @@
+.navLink {
+  position: relative;
+  cursor: pointer;
+  color: black;
+}
+.navLink:hover {
+  transition: all 0.3s;
+
+  transform: scale(1.1);
+}
+.navLink::after {
+  content: '';
+}
+.menu {
+}

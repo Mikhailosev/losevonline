@@ -13,10 +13,16 @@
     "@chakra-ui/react": "^1.6.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "aos": "^2.3.4",
     "framer-motion": "^4",
     "next": "11.1.0",
+    "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-markdown": "^7.0.1",
+    "react-responsive-carousel": "^3.2.21",
+    "react-yandex-maps": "^4.6.0",
+    "remark-gfm": "^2.0.0",
     "sass": "^1.38.0",
     "swr": "^0.5.6"
   },
@@ -29,5 +35,6 @@
     "husky": "^7.0.1",
     "prettier": "^2.3.2",
     "typescript": "4.3.5"
-  }
+  },
+  "proxy": "http://localhost:1337/"
 }

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "price_documents",
+  "info": {
+    "name": "priceDocuments",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "document": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "documentName": {
+      "type": "string"
+    },
+    "category": {
+      "model": "categories",
+      "via": "price_documents"
+    }
+  }
+}
