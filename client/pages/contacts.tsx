@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react'
 import useSWR from 'swr'
 import Preloader from '../components/Preloader/Preloader'
 const Contacts: React.FC<{}> = ({}): ReactElement | null => {
-  const { data, error } = useSWR('http://localhost:1337/contacts')
+  const { data, error } = useSWR('/contacts')
 
   if (data && !error) {
     return (
@@ -52,7 +52,7 @@ const Contacts: React.FC<{}> = ({}): ReactElement | null => {
                 Каталог{' '}
               </Text>
             </Flex>
-            <Link mb="20px" maxW="300px" textDecor="underline" target="_blank" href={'http://localhost:1337' + data.catalogue.url}>
+            <Link mb="20px" maxW="300px" textDecor="underline" target="_blank" href={'/' + data.catalogue.url}>
               Обзорный каталог
             </Link>
             <Flex>

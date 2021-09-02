@@ -4,7 +4,7 @@ import useSWR from 'swr'
 import Link from 'next/link'
 import styles from './products.module.scss'
 const Index: React.FC<{}> = ({}): ReactElement | null => {
-  const { data } = useSWR('http://localhost:1337/categories')
+  const { data } = useSWR('/categories')
   if (data) {
     return (
       <>
@@ -28,7 +28,7 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
                   border="2px solid #ffedad"
                 >
                   <Link passHref={true} href={'/products/' + product.link}>
-                    <Img w="200px" cursor="pointer" objectFit="cover" src={'http://localhost:1337' + product.photo.url} />
+                    <Img w="200px" cursor="pointer" objectFit="cover" src={'/' + product.photo.url} />
                   </Link>
                   <Link passHref={true} href={'/products/' + product.link}>
                     <Text fontWeight="500" textAlign="center" color="brand.text" cursor="pointer">

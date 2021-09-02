@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react'
 import useSWR from 'swr'
 import Preloader from '../components/Preloader/Preloader'
 const Certificates: React.FC<{}> = ({}): ReactElement | null => {
-  const { data, error } = useSWR('http://localhost:1337/certificates')
+  const { data, error } = useSWR('/certificates')
 
   if (data && !error) {
     return (
@@ -23,7 +23,7 @@ const Certificates: React.FC<{}> = ({}): ReactElement | null => {
                   <Td>{cert.name}</Td>
 
                   <Td h="100%" display="flex" justifyContent="flex-end" pr="40px">
-                    <a download href={'http://localhost:1337' + cert?.document?.url}>
+                    <a download href={'/' + cert?.document?.url}>
                       <Img
                         _hover={{
                           transition: 'all .3s',

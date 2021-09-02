@@ -6,14 +6,14 @@ import useSWR from 'swr'
 import styles from './Slider.module.scss'
 import Link from 'next/link'
 const Slider: React.FC<{}> = ({}): ReactElement | null => {
-  const { data } = useSWR('http://localhost:1337/main-pages')
+  const { data } = useSWR('/main-pages')
   if (data) {
     return (
       <Box className={styles.slider} as="main" mt="80px" mb="40px">
         <Carousel autoPlay={true} infiniteLoop={true} swipeable={true}>
           {data.map((slide: any) => (
             <Box position="relative" key={slide}>
-              <Img h="100vh" objectFit="cover" src={'http://localhost:1337' + slide.slidePhoto.url} />
+              <Img h="100vh" objectFit="cover" src={'/' + slide.slidePhoto.url} />
               <Flex
                 fontSize={['40px', '40px', '40px', '60px', '60px']}
                 flexDirection={['column', 'column', 'column', 'row', 'row']}

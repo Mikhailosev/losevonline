@@ -9,7 +9,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
   const [tab, setTab] = useState('description')
   const router = useRouter()
   const { category } = router.query
-  const { data, error } = useSWR('http://localhost:1337/categories/?link=' + category)
+  const { data, error } = useSWR('/categories/?link=' + category)
   if (error) {
     return (
       <Box as="main" className="main">
@@ -80,7 +80,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
             <div className="fadeIn">
               <ReactMarkdown
                 transformImageUri={(src) => {
-                  return 'http://localhost:1337' + src
+                  return '/' + src
                 }}
                 remarkPlugins={[remarkGfm]}
               >

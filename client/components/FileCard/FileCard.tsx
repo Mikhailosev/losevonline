@@ -19,7 +19,7 @@ const FileCard: React.FC<{ data: any }> = ({ data }): ReactElement | null => {
         {data.documentName}
       </Text>
       <Flex w="100%" justifyContent="space-around">
-        <a download href={'http://localhost:1337' + data.document.url}>
+        <a download href={'/' + data.document.url}>
           <Img alt="Загрузить файл" stroke="brand.500" w="26px" src="/images/download.svg" />
         </a>
       </Flex>
