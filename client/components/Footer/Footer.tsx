@@ -12,12 +12,11 @@ import {
   Flex,
   IconButton,
   Img,
-  useDisclosure,
   Text,
+  useDisclosure,
 } from '@chakra-ui/react'
-import AOS from 'aos'
 import Link from 'next/link'
-import React, { ReactElement, ReactNode, useEffect } from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import styles from './Footer.module.scss'
 const Links = [
   {
@@ -38,6 +37,7 @@ const Links = [
   {
     href: '/contacts',
     name: 'Референции',
+    img: '',
   },
   {
     href: '/eng',
@@ -46,23 +46,20 @@ const Links = [
   },
 ]
 const NavLink = ({ link, img, children }: { children: ReactNode; link: string; img: string }) => (
-  <Link fontWeight="700" display="flex" justifyContent="flex-end" href={link} px={2} py={1} rounded={'md'}>
-    <Button colorScheme="brand" color="black" leftIcon={img && <Img h="20px" src={img} />}>
-      {children}
-    </Button>
+  <Link passHref={true} href={link}>
+    <Flex px={2} py={1} rounded={'md'} justifyContent="flex-end">
+      <IconButton aria-label="label" colorScheme="brand" fontWeight="700" color="black" leftIcon={img && <Img h="20px" src={img} />}>
+        {children}
+      </IconButton>
+    </Flex>
   </Link>
 )
 const Footer: React.FC<{}> = ({}): ReactElement | null => {
-  useEffect(() => {
-    AOS.init()
-    AOS.refresh()
-  }, [])
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
   const date = new Date()
   return (
     <>
-      <Drawer colorScheme="brand" isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
+      <Drawer colorScheme="brand" isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
@@ -90,9 +87,7 @@ const Footer: React.FC<{}> = ({}): ReactElement | null => {
         </DrawerContent>
       </Drawer>
       <Flex
-        boxShadow="1px 4px 15px 5px rgba(0,0,0,0.19)
-
-        "
+        boxShadow="1px 4px 15px 5px rgba(0,0,0,0.19)"
         zIndex="2"
         h="40px"
         w="100vw"

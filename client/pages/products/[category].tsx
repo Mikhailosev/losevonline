@@ -82,9 +82,10 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 transformImageUri={(src) => {
                   return 'http://localhost:1337' + src
                 }}
-                children={data[0].description}
                 remarkPlugins={[remarkGfm]}
-              ></ReactMarkdown>
+              >
+                {data[0].description}
+              </ReactMarkdown>
             </div>
           )}
           {/* TODO MOVE TO COMPONENT */}

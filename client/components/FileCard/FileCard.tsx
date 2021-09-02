@@ -1,6 +1,6 @@
 import { Flex, Img, Text } from '@chakra-ui/react'
 import React, { ReactElement } from 'react'
-const FileCard: React.FC<{ data: Object }> = ({ data }): ReactElement | null => {
+const FileCard: React.FC<{ data: any }> = ({ data }): ReactElement | null => {
   return (
     <Flex
       data-aos="fade-right"
