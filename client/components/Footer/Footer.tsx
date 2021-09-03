@@ -51,6 +51,7 @@ const NavLink = ({ link, img, name }: { name: string; link: string; img: string 
       px={2}
       py={1}
       rounded={'md'}
+      mb="10px"
       display="flex"
       justifyContent="flex-end"
       aria-label="label"
