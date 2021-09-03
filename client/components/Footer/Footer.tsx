@@ -47,11 +47,20 @@ const Links = [
 ]
 const NavLink = ({ link, img, name }: { name: string; link: string; img: string }) => (
   <Link passHref={true} href={link}>
-    <Flex px={2} py={1} rounded={'md'} justifyContent="flex-end">
-      <IconButton aria-label="label" colorScheme="brand" fontWeight="700" color="black" leftIcon={img && <Img h="20px" src={img} />}>
-        {name}
-      </IconButton>
-    </Flex>
+    <IconButton
+      px={2}
+      py={1}
+      rounded={'md'}
+      display="flex"
+      justifyContent="flex-end"
+      aria-label="label"
+      colorScheme="brand"
+      fontWeight="700"
+      color="black"
+      leftIcon={img && <Img h="20px" src={img} />}
+    >
+      {name}
+    </IconButton>
   </Link>
 )
 const Footer: React.FC<{}> = ({}): ReactElement | null => {
