@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  url:'/api',
+  url:'https://losevonline.ru/api',
   admin: {
     autoOpen:false,
     auth: {
