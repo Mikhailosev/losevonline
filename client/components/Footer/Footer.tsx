@@ -45,11 +45,11 @@ const Links = [
     img: '/images/earth-globe-with-continents-maps.png',
   },
 ]
-const NavLink = ({ link, img, children }: { children: ReactNode; link: string; img: string }) => (
+const NavLink = ({ link, img, name }: { name: string; link: string; img: string }) => (
   <Link passHref={true} href={link}>
     <Flex px={2} py={1} rounded={'md'} justifyContent="flex-end">
       <IconButton aria-label="label" colorScheme="brand" fontWeight="700" color="black" leftIcon={img && <Img h="20px" src={img} />}>
-        {children}
+        {name}
       </IconButton>
     </Flex>
   </Link>
@@ -71,9 +71,7 @@ const Footer: React.FC<{}> = ({}): ReactElement | null => {
             {isOpen ? (
               <Flex className={styles.menu} data-aos="fade-right" justifyContent="center" flexDir="column" bg="brand.400" pb={4}>
                 {Links.map((link) => (
-                  <NavLink img={link.img} link={link.href} key={link.name}>
-                    {link.name}
-                  </NavLink>
+                  <NavLink img={link.img} name={link.name} link={link.href} key={link.name}></NavLink>
                 ))}
               </Flex>
             ) : null}
