@@ -79,9 +79,6 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
           {tab === 'description' && (
             <div className="fadeIn">
               <ReactMarkdown
-                transformImageUri={(src) => {
-                  return '/api' + src
-                }}
                 remarkPlugins={[remarkGfm]}
               >
                 {data[0].description}
