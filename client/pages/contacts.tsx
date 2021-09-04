@@ -52,7 +52,7 @@ const Contacts: React.FC<{}> = ({}): ReactElement | null => {
                 Каталог{' '}
               </Text>
             </Flex>
-            <Link mb="20px" maxW="300px" textDecor="underline" target="_blank" href={'/' + data.catalogue.url}>
+            <Link mb="20px" maxW="300px" textDecor="underline" target="_blank" href={'/api' + data.catalogue.url}>
               Обзорный каталог
             </Link>
             <Flex>

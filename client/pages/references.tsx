@@ -12,7 +12,7 @@ const References: React.FC<{}> = ({}): ReactElement | null => {
           {data.map((ref: any) => {
             return (
               <Link key="ref" m="20px" w="200px" h="200px" href={ref.link} target="_blank">
-                <Img w="200px" h="200px" objectFit="contain" src={'/' + ref.file.url}></Img>
+                <Img w="200px" h="200px" objectFit="contain" src={'/api' + ref.file.url}></Img>
               </Link>
             )
           })}
