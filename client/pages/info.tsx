@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react'
 import useSWR from 'swr'
 import Preloader from '../components/Preloader/Preloader'
 const Info: React.FC<{}> = ({}): ReactElement | null => {
-  const { data, error } = useSWR('/information-docs')
+  const { data, error } = useSWR('/api/information-docs')
 
   if (data && !error) {
     return (

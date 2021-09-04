@@ -4,7 +4,7 @@ import useSWR from 'swr'
 import Link from 'next/link'
 import styles from './products.module.scss'
 const Index: React.FC<{}> = ({}): ReactElement | null => {
-  const { data } = useSWR('/categories')
+  const { data } = useSWR('/api/categories')
   if (data) {
     return (
       <>

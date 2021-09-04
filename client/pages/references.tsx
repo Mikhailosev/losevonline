@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react'
 import useSWR from 'swr'
 import Preloader from '../components/Preloader/Preloader'
 const References: React.FC<{}> = ({}): ReactElement | null => {
-  const { data, error } = useSWR('/references')
+  const { data, error } = useSWR('/api/references')
   if (data && !error) {
     return (
       <Box as="main" padding={['5%', '5%', '5%', '5%', '1.5% 20%']} className="main">
