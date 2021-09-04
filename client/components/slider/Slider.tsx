@@ -6,7 +6,7 @@ import useSWR from 'swr'
 import styles from './Slider.module.scss'
 import Link from 'next/link'
 const Slider: React.FC<{}> = ({}): ReactElement | null => {
-  const { data } = useSWR('/main-pages')
+  const { data } = useSWR('/api/main-pages')
   if (data) {
     return (
       <Box className={styles.slider} as="main" mt="80px" mb="40px">

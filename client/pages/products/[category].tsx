@@ -9,7 +9,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
   const [tab, setTab] = useState('description')
   const router = useRouter()
   const { category } = router.query
-  const { data, error } = useSWR('/categories/?link=' + category)
+  const { data, error } = useSWR('/api/categories/?link=' + category)
   if (error) {
     return (
       <Box as="main" className="main">
