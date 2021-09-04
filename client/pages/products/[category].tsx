@@ -80,7 +80,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
             <div className="fadeIn">
               <ReactMarkdown
                 transformImageUri={(src) => {
-                  return '/' + src
+                  return '/api' + src
                 }}
                 remarkPlugins={[remarkGfm]}
               >
