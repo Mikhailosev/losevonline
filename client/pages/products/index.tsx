@@ -28,7 +28,7 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
                   border="2px solid #ffedad"
                 >
                   <Link passHref={true} href={'/products/' + product.link}>
-                    <Img w="200px" cursor="pointer" objectFit="cover" src={'/' + product.photo.url} />
+                    <Img w="200px" cursor="pointer" objectFit="cover" src={'/api' + product.photo.url} />
                   </Link>
                   <Link passHref={true} href={'/products/' + product.link}>
                     <Text fontWeight="500" textAlign="center" color="brand.text" cursor="pointer">

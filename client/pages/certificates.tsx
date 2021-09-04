@@ -23,7 +23,7 @@ const Certificates: React.FC<{}> = ({}): ReactElement | null => {
                   <Td>{cert.name}</Td>
 
                   <Td h="100%" display="flex" justifyContent="flex-end" pr="40px">
-                    <a download href={'/' + cert?.document?.url}>
+                    <a download href={'/api' + cert?.document?.url}>
                       <Img
                         _hover={{
                           transition: 'all .3s',
