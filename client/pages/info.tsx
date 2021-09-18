@@ -23,7 +23,7 @@ const Info: React.FC<{}> = ({}): ReactElement | null => {
                   <Td>{info.name}</Td>
 
                   <Td h="100%">
-                    <Link download href={`${process.env.NEXT_PUBLIC_SERVER_URL}` + info?.document?.url}>
+                    <Link target="_blank" download href={`${process.env.NEXT_PUBLIC_SERVER_URL}` + info?.document?.url}>
                       <Img
                         m="0 14px 0 auto"
                         _hover={{
