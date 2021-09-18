@@ -5,17 +5,7 @@ import { Carousel } from 'react-responsive-carousel'
 import useSWR from 'swr'
 import styles from './Slider.module.scss'
 import Link from 'next/link'
-export async function getStaticProps () {
-  // `getStaticProps` is executed on the server side.
-  const article = await getArticleFromAPI()
-  return {
-    props: {
-      fallback: {
-        '/api/article': article
-      }
-    }
-  }
-}
+
 const Slider: React.FC<{}> = ({}): ReactElement | null => {
   const { data } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/main-pages`)
   if (data) {
