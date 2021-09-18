@@ -5,15 +5,26 @@ import { Carousel } from 'react-responsive-carousel'
 import useSWR from 'swr'
 import styles from './Slider.module.scss'
 import Link from 'next/link'
+export async function getStaticProps () {
+  // `getStaticProps` is executed on the server side.
+  const article = await getArticleFromAPI()
+  return {
+    props: {
+      fallback: {
+        '/api/article': article
+      }
+    }
+  }
+}
 const Slider: React.FC<{}> = ({}): ReactElement | null => {
-  const { data } = useSWR('/api/main-pages')
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/main-pages`)
   if (data) {
     return (
       <Box className={styles.slider} as="main" mt="80px" mb="40px">
         <Carousel autoPlay={true} infiniteLoop={true} swipeable={true}>
-          {data.map((slide: any) => (
+          {data?.map((slide: any) => (
             <Box position="relative" key={slide}>
-              <Img h="100vh" objectFit="cover" src={'/api' + slide.slidePhoto.url} />
+              <Img h="100vh" objectFit="cover" src={`${process.env.NEXT_PUBLIC_SERVER_URL}`+ slide.slidePhoto.url} />
               <Flex
                 fontSize={['40px', '40px', '40px', '60px', '60px']}
                 flexDirection={['column', 'column', 'column', 'row', 'row']}
@@ -36,7 +47,7 @@ const Slider: React.FC<{}> = ({}): ReactElement | null => {
                 </Heading>
                 <Flex fontSize="20px" alignItems="center" flexDir="column" className={styles.sliderDescription}>
                   {slide.description}
-                  <Link passHref={true} href="/products">
+                  <Link passHref={true} href="/prod">
                     <Button marginTop="20px" colorScheme="brand" color="black" rightIcon={<Search2Icon />} w="150px">
                       К продукции
                     </Button>

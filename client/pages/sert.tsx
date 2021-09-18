@@ -2,8 +2,8 @@ import { Box, Img, Table, TableCaption, Tbody, Td, Tfoot, Th, Thead, Tr } from '
 import React, { ReactElement } from 'react'
 import useSWR from 'swr'
 import Preloader from '../components/Preloader/Preloader'
-const Certificates: React.FC<{}> = ({}): ReactElement | null => {
-  const { data, error } = useSWR('/api/certificates')
+const Sert: React.FC<{}> = ({}): ReactElement | null => {
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/certificates`)
 
   if (data && !error) {
     return (
@@ -23,7 +23,7 @@ const Certificates: React.FC<{}> = ({}): ReactElement | null => {
                   <Td>{cert.name}</Td>
 
                   <Td h="100%" display="flex" justifyContent="flex-end" pr="40px">
-                    <a download href={'/api' + cert?.document?.url}>
+                    <a download href={`${process.env.NEXT_PUBLIC_SERVER_URL}` + cert?.document?.url}>
                       <Img
                         _hover={{
                           transition: 'all .3s',
@@ -56,4 +56,4 @@ const Certificates: React.FC<{}> = ({}): ReactElement | null => {
   }
   return <Preloader />
 }
-export default Certificates
+export default Sert

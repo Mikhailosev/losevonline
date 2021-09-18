@@ -2,9 +2,9 @@ import { Box, Flex, Heading, Img, Text } from '@chakra-ui/react'
 import React, { ReactElement } from 'react'
 import useSWR from 'swr'
 import Link from 'next/link'
-import styles from './products.module.scss'
+import styles from './prod.module.scss'
 const Index: React.FC<{}> = ({}): ReactElement | null => {
-  const { data } = useSWR('/api/categories')
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/categories`)
   if (data) {
     return (
       <>
@@ -27,15 +27,15 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
                   borderRadius="10px"
                   border="2px solid #ffedad"
                 >
-                  <Link passHref={true} href={'/products/' + product.link}>
-                    <Img w="200px" cursor="pointer" objectFit="cover" src={'/api' + product.photo.url} />
+                  <Link passHref={true} href={'/prod/' + product.link}>
+                    <Img w="200px" cursor="pointer" objectFit="cover" src={`${process.env.NEXT_PUBLIC_SERVER_URL}` + product.photo.url} />
                   </Link>
-                  <Link passHref={true} href={'/products/' + product.link}>
+                  <Link passHref={true} href={'/prod/' + product.link}>
                     <Text fontWeight="500" textAlign="center" color="brand.text" cursor="pointer">
                       {product.name}
                     </Text>
                   </Link>
-                  <Link passHref={true} href={'/products/' + product.link}>
+                  <Link passHref={true} href={'/prod/' + product.link}>
                     <Box boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" className={styles.productHover}>
                       ПОДРОБНОСТИ
                     </Box>

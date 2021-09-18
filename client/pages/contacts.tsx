@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react'
 import useSWR from 'swr'
 import Preloader from '../components/Preloader/Preloader'
 const Contacts: React.FC<{}> = ({}): ReactElement | null => {
-  const { data, error } = useSWR('/api/contacts')
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/contacts`)
 
   if (data && !error) {
     return (
@@ -52,7 +52,7 @@ const Contacts: React.FC<{}> = ({}): ReactElement | null => {
                 Каталог{' '}
               </Text>
             </Flex>
-            <Link mb="20px" maxW="300px" textDecor="underline" target="_blank" href={'/api' + data.catalogue.url}>
+            <Link mb="20px" maxW="300px" textDecor="underline" target="_blank" href={`${process.env.NEXT_PUBLIC_SERVER_URL}` + data.catalogue.url}>
               Обзорный каталог
             </Link>
             <Flex>

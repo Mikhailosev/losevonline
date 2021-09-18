@@ -13,10 +13,10 @@ import {
   IconButton,
   Img,
   Text,
-  useDisclosure,
+  useDisclosure
 } from '@chakra-ui/react'
 import Link from 'next/link'
-import React, { ReactElement, ReactNode } from 'react'
+import React, { ReactElement } from 'react'
 import styles from './Footer.module.scss'
 const Links = [
   {
@@ -30,7 +30,7 @@ const Links = [
     img: '/images/group.svg',
   },
   {
-    href: '/manufacturers',
+    href: '/o-proizvoditelyax',
     name: 'О производителях',
     img: '/images/manufacturer.png',
   },
@@ -158,12 +158,12 @@ const Footer: React.FC<{}> = ({}): ReactElement | null => {
                 О компании
               </Button>
             </Link>
-            <Link passHref={true} href="/manufacturers">
+            <Link passHref={true} href="/o-proizvoditelyax">
               <Button colorScheme="brand" rounded="none" color="black" fontSize="12px" fontWeight="400px">
                 О производителях
               </Button>
             </Link>
-            <Link passHref={true} href="/references">
+            <Link passHref={true} href="/referenczii">
               <Button colorScheme="brand" rounded="none" color="black" fontSize="12px" fontWeight="400px">
                 Референции
               </Button>

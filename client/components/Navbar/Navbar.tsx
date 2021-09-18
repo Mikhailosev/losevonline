@@ -5,12 +5,12 @@ import styles from './Navbar.module.scss'
 
 const Links = [
   {
-    href: '/products',
+    href: '/prod',
     name: 'Продукция',
     img: '/images/tag.png',
   },
   {
-    href: '/certificates',
+    href: '/sert',
     name: 'Сертификаты',
     img: '/images/certificate.png',
   },
@@ -96,7 +96,7 @@ const Navbar: React.FC<{}> = ({}): ReactElement | null => {
         />
         <List mr="40px" display={['none', 'none', 'none', 'flex', 'flex']} w="100%" justifyContent="flex-end" alignItems="center">
           <ListItem display="flex" flexDir="column" className={styles.navLink} fontWeight="bold" m="20px">
-            <Link href="/products">
+            <Link href="/prod">
               <Button colorScheme="brand" color="black" leftIcon={<Img h="20px" src="/images/tag.png" />}>
                 Продукция
               </Button>
@@ -104,7 +104,7 @@ const Navbar: React.FC<{}> = ({}): ReactElement | null => {
           </ListItem>
 
           <ListItem display="flex" flexDir="column" className={styles.navLink} fontWeight="bold" m="20px">
-            <Link href="/certificates">
+            <Link href="/sert">
               <Button colorScheme="brand" color="black" leftIcon={<Img h="20px" src="/images/certificate.png" />}>
                 Сертификаты
               </Button>
