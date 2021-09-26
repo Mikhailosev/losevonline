@@ -16,9 +16,12 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
             {data.map((product: any) => {
               return (
                 <Flex
+		justifyContent="space-between"	
                   padding="20px"
                   position="relative"
-                  maxW="350px"
+                  maxW="320px"
+		h="250px"
+		w="100%"
                   key={product.name}
                   className={styles.product}
                   alignItems="center"
@@ -28,14 +31,14 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
                   border="2px solid #ffedad"
                 >
                   <Link passHref={true} href={'/prod/' + product.link}>
-                    <Img w="200px" cursor="pointer" objectFit="cover" src={`${process.env.NEXT_PUBLIC_SERVER_URL}` + product.photo.url} />
+                    <Img w="200px" cursor="pointer" objectFit="cover" src={`${process.env.NEXT_PUBLIC_SERVER_URL}` + product?.photo?.url} />
                   </Link>
-                  <Link passHref={true} href={'/prod/' + product.link}>
+                  <Link passHref={true} href={'/prod/' + product?.link}>
                     <Text fontWeight="500" textAlign="center" color="brand.text" cursor="pointer">
                       {product.name}
                     </Text>
                   </Link>
-                  <Link passHref={true} href={'/prod/' + product.link}>
+                  <Link passHref={true} href={'/prod/' + product?.link}>
                     <Box boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" className={styles.productHover}>
                       ПОДРОБНОСТИ
                     </Box>

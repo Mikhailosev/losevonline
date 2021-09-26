@@ -13,9 +13,10 @@ const References: React.FC<{}> = ({}): ReactElement | null => {
         </Flex>
         <Flex justifyContent="space-around" flexWrap="wrap">
           {data.map((ref: any) => {
-            return (
+;            
+return (
               <Link key="ref" m="20px" w="200px" h="200px" href={ref.link} target="_blank">
-                <Img w="200px" h="200px" objectFit="contain" src={`${process.env.NEXT_PUBLIC_SERVER_URL}` + ref.file.url}></Img>
+                <Img w="200px" h="200px" objectFit="contain" src={`${process.env.NEXT_PUBLIC_SERVER_URL}` + ref?.file?.url}></Img>
               </Link>
             )
           })}
