@@ -22,6 +22,9 @@ const FileCard: React.FC<{ data: any }> = ({ data }): ReactElement | null => {
         <a download target="blank" href={`${process.env.NEXT_PUBLIC_SERVER_URL}` + data.document.url}>
           <Img alt="Загрузить файл" stroke="brand.500" w="26px" src="/images/download.svg" />
         </a>
+        <a target="blank" href={`${process.env.NEXT_PUBLIC_SERVER_URL}` + data.document.url}>
+          <Img alt="Загрузить файл" stroke="brand.500" w="26px" src="/images/eye.svg" />
+        </a>
       </Flex>
     </Flex>
   )
