@@ -80,7 +80,7 @@ const Navbar: React.FC<{}> = ({}): ReactElement | null => {
           as="span"
           fontSize="20px"
         >
-          Современные системы отопления и вентляции объемных помещений
+          <Link href="/">Современные системы отопления и вентляции объемных помещений</Link>
         </Text>
         <IconButton
           position={'absolute'}
