@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Img, Text } from '@chakra-ui/react'
+import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import useSWR from 'swr'
-import Link from 'next/link'
 import styles from './prod.module.scss'
 const Index: React.FC<{}> = ({}): ReactElement | null => {
   const { data } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/categories?_sort=order:ASC`)
@@ -16,12 +16,12 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
             {data.map((product: any) => {
               return (
                 <Flex
-		justifyContent="space-between"	
+                  justifyContent="space-between"
                   padding="20px"
                   position="relative"
                   maxW="320px"
-		h="250px"
-		w="100%"
+                  h="250px"
+                  w="100%"
                   key={product.name}
                   className={styles.product}
                   alignItems="center"

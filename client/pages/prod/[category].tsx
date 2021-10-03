@@ -1,8 +1,6 @@
 import { Box, Button, Flex, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
 import React, { ReactElement, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
 import useSWR from 'swr'
 import FileCard from '../../components/FileCard/FileCard'
 const Category: React.FC<{}> = ({}): ReactElement | null => {
