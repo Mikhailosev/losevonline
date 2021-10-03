@@ -28,8 +28,8 @@
       "type": "string"
     },
     "category": {
-      "model": "categories",
-      "via": "price_documents"
+      "via": "price_documents",
+      "model": "categories"
     }
   }
 }

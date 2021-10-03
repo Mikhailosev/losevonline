@@ -40,6 +40,9 @@
     "price_documents": {
       "via": "category",
       "collection": "price-documents"
+    },
+    "Order": {
+      "type": "integer"
     }
   }
 }

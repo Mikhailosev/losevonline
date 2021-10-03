@@ -4,7 +4,7 @@ import useSWR from 'swr'
 import Link from 'next/link'
 import styles from './prod.module.scss'
 const Index: React.FC<{}> = ({}): ReactElement | null => {
-  const { data } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/categories`)
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_SERVER_URL}/categories?_sort=order:ASC`)
   if (data) {
     return (
       <>
