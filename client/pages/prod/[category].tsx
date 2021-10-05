@@ -75,7 +75,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
             </Button>
           </Flex>
           {tab === 'description' && (
-            <div dangerouslySetInnerHTML={{__html: data[0].description}} className="fadeIn">
+            <div dangerouslySetInnerHTML={{__html: data[0].description}} className="fadeIn ck-content">
           
             </div>
           )}
