@@ -41,7 +41,7 @@
       "via": "category",
       "collection": "price-documents"
     },
-    "Order": {
+    "order": {
       "type": "integer"
     }
   }
