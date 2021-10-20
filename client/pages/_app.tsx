@@ -55,7 +55,6 @@ const breakpoints = createBreakpoints({
 function MyApp({ Component, pageProps }: AppProps): any {
   const [isRendered, setRendered] = useState(true)
   Router.events.on('routeChangeStart', () => {
-    console.log('here1')
     return setRendered(false)
   })
   Router.events.on('hashChangeStart', () => {
@@ -65,11 +64,9 @@ function MyApp({ Component, pageProps }: AppProps): any {
     return setRendered(false)
   })
   Router.events.on('routeChangeComplete', () => {
-    console.log('here2')
     return setRendered(true)
   })
   Router.events.on('routeChangeError', () => {
-    console.log('here3')
     return setRendered(true)
   })
   useEffect(() => {
