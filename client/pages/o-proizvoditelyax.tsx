@@ -6,7 +6,7 @@ const manufacturers: React.FC<{}> = ({}): ReactElement | null => {
       <Heading mb="40px" textAlign="center">
         О ПРОИЗВОДИТЕЛЯХ
       </Heading>
-      <Flex mb="40px" flexWrap="wrap" justifyContent="center">
+      <Flex borderBottom="3px solid #eaeaea" mb="40px" flexWrap="wrap" justifyContent="center">
         <Img m="20px" objectFit="contain" mr="40px" src="/images/cmt-logo.png" />
         <Flex flexDir="column">
           <Heading mt="40px" mb="40px" as="h3">
@@ -20,10 +20,10 @@ const manufacturers: React.FC<{}> = ({}): ReactElement | null => {
           </Text>
         </Flex>
         <AspectRatio m="40px" minW="300px" ratio={1}>
-          <iframe title="naruto" src="https://www.youtube.com/embed/h5VJQOTH8eo" allowFullScreen />
+          <iframe title="CMT CLIMA" src="https://www.youtube.com/embed/kk0SFKWkvJc" allowFullScreen />
         </AspectRatio>
       </Flex>
-      <Flex mb="40px" flexWrap="wrap" justifyContent="center">
+      <Flex  borderBottom="3px solid #eaeaea" mb="40px" flexWrap="wrap" justifyContent="center">
         <Img m="20px" objectFit="contain" mr="40px" src="/images/wntwrm-logo.png" />
         <Flex flexDir="column">
           <Heading mt="40px" mb="40px" as="h3">
@@ -36,10 +36,10 @@ const manufacturers: React.FC<{}> = ({}): ReactElement | null => {
           </Text>
         </Flex>
         <AspectRatio m="40px" minW="300px" ratio={1}>
-          <iframe title="naruto" src="https://www.youtube.com/embed/iwmearVaemc" allowFullScreen />
+          <iframe title="WINTERWARM" src="https://www.youtube.com/embed/iwmearVaemc" allowFullScreen />
         </AspectRatio>
       </Flex>
-      <Flex mb="40px" flexWrap="wrap" justifyContent="center">
+      <Flex  borderBottom="3px solid #eaeaea"mb="40px" flexWrap="wrap" justifyContent="center">
         <Img m="20px" objectFit="contain" mr="40px" src="/images/fbr-logo.png" />
         <Flex flexDir="column">
           <Heading mt="40px" mb="40px" as="h3">

@@ -15,7 +15,7 @@ const Links = [
     img: '/images/certificate.png',
   },
   {
-    href: '/information',
+    href: '/info',
     name: 'Информация',
     img: '/images/info-button.png',
   },
