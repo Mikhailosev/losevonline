@@ -7,7 +7,7 @@ const References: React.FC<{}> = ({}): ReactElement | null => {
   if (data && !error) {
     return (
       <Box as="main" padding={['5%', '5%', '5%', '5%', '1.5% 20%']} className="main">
-        <Flex justifyContent="space-between">
+        <Flex flexDir={['column', 'column', 'column', 'row', 'row']} justifyContent="space-between">
           <Heading textAlign="center">Референции</Heading>
           <Link href="https://www.instagram.com/losevltd/" display="flex" alignItems="center">
             {' '}
