@@ -25,7 +25,7 @@ const Links = [
     img: '/images/call.png',
   },
   {
-    href: '/about',
+    href: '/o-kompanii',
     name: 'О компании',
     img: '/images/group.svg',
   },
@@ -35,7 +35,7 @@ const Links = [
     img: '/images/manufacturer.png',
   },
   {
-    href: '/contacts',
+    href: '/referenczii',
     name: 'Референции',
     img: '',
   },
