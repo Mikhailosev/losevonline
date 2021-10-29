@@ -81,7 +81,7 @@ const Footer: React.FC<{}> = ({}): ReactElement | null => {
             {isOpen ? (
               <Flex className={styles.menu} data-aos="fade-right" justifyContent="center" flexDir="column" bg="brand.400" pb={4}>
                 {Links.map((link) => (
-                  <NavLink img={link.img} name={link.name} link={link.href} key={link.name}></NavLink>
+                  <NavLink onClick={onClose} img={link.img} name={link.name} link={link.href} key={link.name}></NavLink>
                 ))}
               </Flex>
             ) : null}
