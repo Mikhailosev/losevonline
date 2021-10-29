@@ -7,10 +7,9 @@ const References: React.FC<{}> = ({}): ReactElement | null => {
   if (data && !error) {
     return (
       <Box as="main" padding={['5%', '5%', '5%', '5%', '1.5% 20%']} className="main">
-        <Flex flexDir={['column', 'column', 'column', 'row', 'row']} justifyContent="space-between">
+        <Flex flexDir={['column', 'column', 'column', 'row', 'row']} alignItems="center" justifyContent="space-between">
           <Heading textAlign="center">Референции</Heading>
-          <Link href="https://www.instagram.com/losevltd/" display="flex" alignItems="center">
-            {' '}
+          <Link margin={['15px', '15px', '15px', '0%', '0%']} href="https://www.instagram.com/losevltd/" display="flex" alignItems="center">
             Мы в Instagram: &nbsp; <Img ml="20px" w="50px" src="/images/instagram.svg" />
           </Link>
         </Flex>
