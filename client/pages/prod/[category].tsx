@@ -92,6 +92,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 {data[0].documents.map((document: any) => {
                   return <FileCard key={document} data={document} />
                 })}
+		
               </Flex>
             </div>
           )}
