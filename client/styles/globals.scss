@@ -1,5 +1,14 @@
 @import '../node_modules/aos/dist/aos.css';
 
+.image.image-style-align-center {
+    margin: 10px !important;
+    max-width: 320px !important;
+    display: inline-table !important;
+	img{
+	margin:0 auto !important;	
+}
+}
+
 html,
 body {
   padding: 0;

@@ -4,7 +4,7 @@ import React, { ReactElement, useState } from 'react'
 import { SRLWrapper } from 'simple-react-lightbox'
 import useSWR from 'swr'
 import FileCard from '../../components/FileCard/FileCard'
-const Category: React.FC<{}> = ({}): ReactElement | null => {
+const Category: React.FC<{}> = ({ }): ReactElement | null => {
   const [tab, setTab] = useState('description')
   const router = useRouter()
   const { category } = router.query
@@ -98,6 +98,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 })}
                 {data[0].link === 'gazovye-i-dizelnye-gorelki' && (
                   <Flex w="280px" flexDir="column" padding="20px" border="1px solid #fec91a">
+<<<<<<< HEAD
                     <Text mb="10px">
                       Инструкции по эксплуатации, копии сертификатов на горелки предоставляются по запросу или смотри сайты производителей:
                     </Text>
@@ -107,6 +108,11 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                     <Link mb="10px" href="https://www.riello.com">
                       www.riello.com
                     </Link>
+=======
+                    <Text mb="10px">Инструкции по эксплуатации, копии сертификатов на горелки предоставляются по запросу или смотри сайты производителей:</Text>
+                    <Link mb="10px" href="https://www.fbr.it">www.fbr.it</Link>
+                    <Link mb="10px" href="https://www.riello.com">www.riello.com</Link>
+>>>>>>> dddae0e6add9aa1858f78984dddf166ad7164fb5
                   </Flex>
                 )}
               </Flex>
@@ -134,3 +140,4 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
   return <></>
 }
 export default Category
+
