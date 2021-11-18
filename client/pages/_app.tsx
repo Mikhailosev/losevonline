@@ -4,6 +4,7 @@ import AOS from 'aos'
 // @ts-expect-error doesnt have types
 import withYM from 'next-ym'
 import type { AppProps } from 'next/app'
+import SimpleReactLightbox from 'simple-react-lightbox'
 import Router from 'next/dist/client/router'
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
@@ -82,28 +83,31 @@ function MyApp({ Component, pageProps }: AppProps): any {
           fetch(resource, init).then((res) => res.json()),
       }}
     >
-      <ChakraProvider theme={extendTheme({ ...theme, breakpoints })}>
-        {!isRendered && <Preloader />}
-        <Head>
-          <link rel="shortcut icon" href="/images/losev-favicon.png" type="image/x-icon" />
-          <meta charSet="utf-8" />
-          <title>Современные системы отопления и вентиляции объёмных помещений - Главная страница сайта</title>
-          <link rel="shortcut icon" href="_t/logos/losev-favicon.png" type="image/x-icon" />
-          <meta
-            name="description"
-            content="Системы отопления и вентиляции объёмных помещений. Воздушное и лучистое отопление - Главная страница сайта"
-          />
-          <meta
-            name="keywords"
-            content="воздухонагреватели, теплогенераторы, инфракрасные обогреватели, водяные потолочные панели, газовые инфракрасные излучатели, потолочные вентиляторы (дестратификаторы), воздушные завесы"
-          />
-          <meta name="viewport" content="width=device-width" />
-        </Head>
-        <Navbar></Navbar>
+      {' '}
+      <SimpleReactLightbox>
+        <ChakraProvider theme={extendTheme({ ...theme, breakpoints })}>
+          {!isRendered && <Preloader />}
+          <Head>
+            <link rel="shortcut icon" href="/images/losev-favicon.png" type="image/x-icon" />
+            <meta charSet="utf-8" />
+            <title>Современные системы отопления и вентиляции объёмных помещений - Главная страница сайта</title>
+            <link rel="shortcut icon" href="_t/logos/losev-favicon.png" type="image/x-icon" />
+            <meta
+              name="description"
+              content="Системы отопления и вентиляции объёмных помещений. Воздушное и лучистое отопление - Главная страница сайта"
+            />
+            <meta
+              name="keywords"
+              content="воздухонагреватели, теплогенераторы, инфракрасные обогреватели, водяные потолочные панели, газовые инфракрасные излучатели, потолочные вентиляторы (дестратификаторы), воздушные завесы"
+            />
+            <meta name="viewport" content="width=device-width" />
+          </Head>
+          <Navbar></Navbar>
 
-        <Component {...pageProps} />
-        <Footer></Footer>
-      </ChakraProvider>
+          <Component {...pageProps} />
+          <Footer></Footer>
+        </ChakraProvider>
+      </SimpleReactLightbox>
     </SWRConfig>
   )
 }
