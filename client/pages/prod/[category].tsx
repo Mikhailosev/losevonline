@@ -22,23 +22,17 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
     return (
       <>
         <Box as="main" padding={['5%', '5%', '5%', '5%', '1.5% 20%']} className="main">
-          <Heading textAlign="center" mb="40px">
+          <Heading color="brand.text" textAlign="center" mb="40px">
             {data[0].name}
           </Heading>
-          <Flex
-            maxW="600px"
-            maxH="400px"
-            flexDirection={['column', 'row', 'row', 'row', 'row']}
-            justifyContent="space-between"
-            flexWrap="wrap"
-            mb="40px"
-          >
+          <Flex maxW="600px" maxH="400px" flexDirection={['column', 'row', 'row', 'row', 'row']} flexWrap="wrap" mb="40px">
             <Button
               textAlign="start"
               mt="20px"
               boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
               colorScheme="brand"
               color="brand.text"
+              mr="10px"
               onClick={() => {
                 setTab('description')
               }}
@@ -47,20 +41,23 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
             >
               Описание
             </Button>
-            <Button
-              textAlign="start"
-              mt="20px"
-              boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
-              colorScheme="brand"
-              color="brand.text"
-              onClick={() => {
-                setTab('documents')
-              }}
-              variant={tab === 'documents' ? 'solid' : 'outline'}
-              rounded="5px"
-            >
-              Документы и описание
-            </Button>
+            {data[0].documents.length > 0 && (
+              <Button
+                textAlign="start"
+                mt="20px"
+                boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
+                colorScheme="brand"
+                color="brand.text"
+                mr="10px"
+                onClick={() => {
+                  setTab('documents')
+                }}
+                variant={tab === 'documents' ? 'solid' : 'outline'}
+                rounded="5px"
+              >
+                Документы и описание
+              </Button>
+            )}
             {data[0].price_documents.length > 0 && (
               <Button
                 textAlign="start"
@@ -68,6 +65,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
                 colorScheme="brand"
                 color="brand.text"
+                mr="10px"
                 onClick={() => {
                   setTab('prices')
                 }}

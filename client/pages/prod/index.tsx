@@ -26,9 +26,13 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
                   className={styles.product}
                   alignItems="center"
                   flexDir="column"
-                  boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;"
+                  transition="all"
+                  _hover={{
+                    boxShadow: 'rgba(255, 237, 173, 0.3) 0px 14px 28px, rgba(255, 237, 173, 0.35) 0px 14px 28px;',
+                  }}
+                  boxShadow="rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;"
                   borderRadius="10px"
-                  border="2px solid #ffedad"
+                  border="2px solid #eaeaea"
                 >
                   <Link passHref={true} href={'/prod/' + product.link}>
                     <Img w="200px" cursor="pointer" objectFit="cover" src={`${process.env.NEXT_PUBLIC_SERVER_URL}` + product?.photo?.url} />
@@ -40,7 +44,9 @@ const Index: React.FC<{}> = ({}): ReactElement | null => {
                   </Link>
                   <Link passHref={true} href={'/prod/' + product?.link}>
                     <Box boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" className={styles.productHover}>
-                      ПОДРОБНОСТИ
+                      <Text letterSpacing="2px" borderRadius="5px" p="15px" color="black" background="brand.400">
+                        ПОДРОБНОСТИ
+                      </Text>
                     </Box>
                   </Link>
                 </Flex>
