@@ -1,5 +1,23 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, IconButton, Img, Link, List, ListItem, Text, useDisclosure } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
+  IconButton,
+  Img,
+  Link,
+  List,
+  ListItem,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react'
 import React, { ReactElement, ReactNode } from 'react'
 import styles from './Navbar.module.scss'
 
@@ -37,10 +55,56 @@ const NavLink = ({ link, img, children }: { children: ReactNode; link: string; i
     </Button>
   </Link>
 )
+const NavLink2 = ({ link, img, name }: { name: string; link: string; img: string }) => (
+  <Link passHref={true} href={link}>
+    <Button
+      px={2}
+      py={1}
+      rounded={'md'}
+      mb="10px"
+      display="flex"
+      justifyContent="flex-end"
+      aria-label="label"
+      colorScheme="brand"
+      fontWeight="700"
+      color="black"
+      leftIcon={img ? <Img h="20px" src={img} /> : <></>}
+    >
+      {name}
+    </Button>
+  </Link>
+)
 const Navbar: React.FC<{}> = ({}): ReactElement | null => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
+      <Drawer colorScheme="brand" isOpen={isOpen} placement="right" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader background="brand.400" color="black">
+            Основная информация
+          </DrawerHeader>
+
+          <DrawerBody background="brand.400">
+            {isOpen ? (
+              <Flex className={styles.menu} data-aos="fade-right" justifyContent="center" flexDir="column" bg="brand.400" pb={4}>
+                {Links.map((link) => (
+                  <Box onClick={onClose}>
+                    <NavLink2 img={link.img} link={link.href} key={link.name} name={link.name}></NavLink2>
+                  </Box>
+                ))}
+              </Flex>
+            ) : null}
+          </DrawerBody>
+
+          <DrawerFooter background="brand.400">
+            <Button variant="outline" color="brand.400" background="black" mr={3} onClick={onClose}>
+              Назад
+            </Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
       <Flex
         as="nav"
         boxShadow="rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;"
@@ -125,24 +189,6 @@ const Navbar: React.FC<{}> = ({}): ReactElement | null => {
             </Link>
           </ListItem>
         </List>
-        {isOpen ? (
-          <Flex
-            className={styles.menu}
-            data-aos="fade-right"
-            justifyContent="center"
-            as="nav"
-            flexDir="column"
-            bg="brand.400"
-            w="100vw"
-            pb={4}
-          >
-            {Links.map((link) => (
-              <NavLink img={link.img} link={link.href} key={link.name}>
-                {link.name}
-              </NavLink>
-            ))}
-          </Flex>
-        ) : null}
       </Flex>
     </>
   )
