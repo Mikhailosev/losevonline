@@ -156,7 +156,7 @@ const Footer: React.FC<{}> = ({}): ReactElement | null => {
                 Контакты
               </Button>
             </Link>
-            <Link passHref={true} href="/about">
+            <Link passHref={true} href="/o-kompanii">
               <Button colorScheme="brand" rounded="none" color="black" fontSize="12px" fontWeight="400px">
                 О компании
               </Button>

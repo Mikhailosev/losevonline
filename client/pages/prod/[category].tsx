@@ -1,9 +1,9 @@
-import { Box, Button, Flex, Heading } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Link, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
 import React, { ReactElement, useState } from 'react'
 import useSWR from 'swr'
 import FileCard from '../../components/FileCard/FileCard'
-const Category: React.FC<{}> = ({}): ReactElement | null => {
+const Category: React.FC<{}> = ({ }): ReactElement | null => {
   const [tab, setTab] = useState('description')
   const router = useRouter()
   const { category } = router.query
@@ -59,26 +59,25 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
             >
               Документы и описание
             </Button>
-            <Button
-              textAlign="start"
-              mt="20px"
-              boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
-              colorScheme="brand"
-              color="brand.text"
-              onClick={() => {
-                setTab('prices')
-              }}
-              variant={tab === 'prices' ? 'solid' : 'outline'}
-              rounded="5px"
-            >
-              Цены
-            </Button>
+            {data[0].price_documents.length > 0 && (
+              <Button
+                textAlign="start"
+                mt="20px"
+                boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
+                colorScheme="brand"
+                color="brand.text"
+                onClick={() => {
+                  setTab('prices')
+                }}
+                variant={tab === 'prices' ? 'solid' : 'outline'}
+                rounded="5px"
+              >
+                Цены
+              </Button>
+            )
+            }
           </Flex>
-          {tab === 'description' && (
-            <div dangerouslySetInnerHTML={{__html: data[0].description}} className="fadeIn ck-content">
-          
-            </div>
-          )}
+          {tab === 'description' && <div dangerouslySetInnerHTML={{ __html: data[0].description }} className="fadeIn ck-content"></div>}
           {/* TODO MOVE TO COMPONENT */}
           {tab === 'documents' && (
             <div className="fadeIn">
@@ -92,7 +91,13 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 {data[0].documents.map((document: any) => {
                   return <FileCard key={document} data={document} />
                 })}
-		
+                {data[0].link === 'gazovye-i-dizelnye-gorelki' && (
+                  <Flex w="280px" flexDir="column" padding="20px" border="1px solid #fec91a">
+                    <Text mb="10px">Инструкции по эксплуатации, копии сертификатов на горелки предоставляются по запросу или смотри сайты производителей:</Text>
+                    <Link mb="10px" href="https://www.fbr.it">www.fbr.it</Link>
+                    <Link mb="10px" href="https://www.riello.com">www.riello.com</Link>
+                  </Flex>
+                )}
               </Flex>
             </div>
           )}
@@ -118,3 +123,4 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
   return <></>
 }
 export default Category
+
