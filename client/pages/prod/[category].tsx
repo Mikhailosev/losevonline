@@ -41,23 +41,21 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
             >
               Описание
             </Button>
-            {data[0].documents.length > 0 && (
-              <Button
-                textAlign="start"
-                mt="20px"
-                boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
-                colorScheme="brand"
-                color="brand.text"
-                mr="10px"
-                onClick={() => {
-                  setTab('documents')
-                }}
-                variant={tab === 'documents' ? 'solid' : 'outline'}
-                rounded="5px"
-              >
-                Документы и описание
-              </Button>
-            )}
+            <Button
+              textAlign="start"
+              mt="20px"
+              boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;"
+              colorScheme="brand"
+              color="brand.text"
+              mr="10px"
+              onClick={() => {
+                setTab('documents')
+              }}
+              variant={tab === 'documents' ? 'solid' : 'outline'}
+              rounded="5px"
+            >
+              Документы и описание
+            </Button>
             {data[0].price_documents.length > 0 && (
               <Button
                 textAlign="start"
@@ -88,7 +86,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 mt="20px"
                 flexDir={['column', 'row', 'row', 'row', 'row']}
                 alignItems={['center', 'normal', 'normal', 'normal', 'normal']}
-                justifyContent="space-between"
+                justifyContent="center"
                 flexWrap="wrap"
               >
                 {data[0].documents.map((document: any) => {
@@ -116,7 +114,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 mt="20px"
                 flexDir={['column', 'row', 'row', 'row', 'row']}
                 alignItems={['center', 'normal', 'normal', 'normal', 'normal']}
-                justifyContent="space-between"
+                justifyContent="center"
                 flexWrap="wrap"
               >
                 {data[0].price_documents.map((document: any) => {
