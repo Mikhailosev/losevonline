@@ -95,7 +95,8 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
                 {data[0].link === 'gazovye-i-dizelnye-gorelki' && (
                   <Flex w="280px" flexDir="column" padding="20px" border="1px solid #fec91a">
                     <Text mb="10px">
-                      Инструкции по эксплуатации, копии сертификатов на горелки предоставляются по запросу или смотри сайты производителей:
+                      Инструкции по эксплуатации, копии сертификатов на горелки предоставляются по запросу или их можно найти на сайтах
+                      производителей:
                     </Text>
                     <Link mb="10px" href="https://www.fbr.it">
                       www.fbr.it
