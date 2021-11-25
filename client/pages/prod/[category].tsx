@@ -76,7 +76,12 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
           </Flex>
           {tab === 'description' && (
             <SRLWrapper>
-              <div dangerouslySetInnerHTML={{ __html: data[0].description }} className="fadeIn ck-content"></div>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data[0].description.replace('http://213.139.211.77/api/uploads', 'https://losevonline.ru/api/uploads'),
+                }}
+                className="fadeIn ck-content"
+              ></div>
             </SRLWrapper>
           )}
           {/* TODO MOVE TO COMPONENT */}
