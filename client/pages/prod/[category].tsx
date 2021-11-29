@@ -78,7 +78,7 @@ const Category: React.FC<{}> = ({}): ReactElement | null => {
             <SRLWrapper>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[0].description.replace('http://213.139.211.77/api/uploads', 'https://losevonline.ru/api/uploads'),
+                  __html: data[0].description.replaceAll('http://213.139.211.77', 'https://losevonline.ru'),
                 }}
                 className="fadeIn ck-content"
               ></div>
